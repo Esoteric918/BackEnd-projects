@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # adding the application
     'users.apps.UsersConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -77,11 +78,11 @@ WSGI_APPLICATION = 'djangoPostgres.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'swlDB',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'swldb',
         'USER': 'tofer',
         'PASSWORD': 'pw',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
