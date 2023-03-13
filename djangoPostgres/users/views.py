@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-
-# Create your views here.
+from .models import User, Post
 
 def index(request):
-    return HttpResponse("Hello, world. SWL App Index.")
+    users = User.objects.all()
+    user_posts = Post.objects.all()
+    print(users.all())
+    print(user_posts.all())
 
-
+    return render(request, 'users/index.html', {'users': users, 'user_posts': user_posts})
